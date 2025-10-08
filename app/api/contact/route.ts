@@ -1,5 +1,16 @@
 import { NextResponse } from 'next/server'
 
+export async function OPTIONS(request: Request) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  })
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -58,7 +69,12 @@ export async function POST(request: Request) {
 
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      }
     )
   } catch (error) {
     console.error('Error processing contact form:', error)
