@@ -15,7 +15,8 @@ import {
   CheckCircle2,
   ArrowRight,
   Menu,
-  X
+  X,
+  Linkedin
 } from 'lucide-react'
 
 export default function Home() {
@@ -455,12 +456,26 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-white/10">
+      <footer className="py-12 border-t border-white/10">
         <div className="container-custom">
           <div className="text-center text-gray-400">
-            <p className="mb-2">
-              <span className="text-white font-semibold">DC Infrastructures, Inc.</span>
+            <p className="mb-6">
+              <span className="text-white font-semibold text-lg">DC Infrastructures, Inc.</span>
             </p>
+            <div className="flex justify-center gap-6 mb-6">
+              <a
+                href="https://www.linkedin.com/company/dc-infrastructures-inc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-[#0047AB] transition-colors group"
+                aria-label="Follow us on LinkedIn"
+              >
+                <div className="p-2 rounded-lg bg-white/5 group-hover:bg-[#0047AB]/20 transition-colors">
+                  <Linkedin size={28} />
+                </div>
+                <span className="text-sm font-medium">Follow us on LinkedIn</span>
+              </a>
+            </div>
             <p className="text-sm">
               © {new Date().getFullYear()} DC Infrastructures, Inc. All rights reserved.
             </p>
