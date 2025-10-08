@@ -32,25 +32,12 @@ export default function App() {
     setFormStatus('submitting')
 
     try {
-      const response = await fetch('https://api.resend.com/emails', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_RESEND_API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          from: 'Website Contact Form <noreply@dcinfrastructures.io>',
-          to: ['dcruz@dcinfrastructures.io'],
-          subject: `New Contact Form Submission from ${formData.name}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${formData.name}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Company:</strong> ${formData.company || 'N/A'}</p>
-            <p><strong>Message:</strong></p>
-            <p>${formData.message.replace(/\n/g, '<br>')}</p>
-          `,
-        }),
+        body: JSON.stringify(formData),
       })
 
       if (response.ok) {

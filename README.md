@@ -30,11 +30,7 @@ npm run preview
 
 ## Environment Variables
 
-Create a `.env` file in the root directory:
-
-```env
-VITE_RESEND_API_KEY=your_resend_api_key_here
-```
+The contact form uses Cloudflare Pages Functions (serverless). The API key is set in Cloudflare Pages dashboard, not in local `.env` files.
 
 ## Cloudflare Pages Deployment
 
@@ -49,8 +45,8 @@ VITE_RESEND_API_KEY=your_resend_api_key_here
    - **Build command**: `npm run build`
    - **Build output directory**: `dist`
    - **Root directory**: `/` (leave as default)
-   - **Environment variables**:
-     - `VITE_RESEND_API_KEY`: Your Resend API key
+   - **Environment variables** (Production):
+     - `RESEND_API_KEY`: Your Resend API key from [resend.com](https://resend.com/api-keys)
 
 3. **Deploy**
    - Every push to `main` triggers a production deployment
