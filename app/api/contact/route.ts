@@ -1,11 +1,8 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
 
 export const runtime = 'edge'
 
 export async function POST(request: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
-
   try {
     const body = await request.json()
     const { name, email, company, message } = body
@@ -27,30 +24,40 @@ export async function POST(request: Request) {
       )
     }
 
-    // Send email using Resend
-    const { data, error } = await resend.emails.send({
-      from: 'Website Contact Form <noreply@dcinfrastructures.io>',
-      to: 'dcruz@dcinfrastructures.io',
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || 'N/A'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
+    // Send email using Resend API directly
+    const resendResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Website Contact Form <noreply@dcinfrastructures.io>',
+        to: ['dcruz@dcinfrastructures.io'],
+        subject: `New Contact Form Submission from ${name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company || 'N/A'}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      }),
     })
 
-    if (error) {
-      console.error('Failed to send email:', error)
+    if (!resendResponse.ok) {
+      const errorData = await resendResponse.json()
+      console.error('Failed to send email:', errorData)
       return NextResponse.json(
-        { error: 'Failed to send email', details: error.message },
+        { error: 'Failed to send email', details: errorData.message },
         { status: 500 }
       )
     }
 
+    const data = await resendResponse.json()
     console.log('Email sent successfully:', data)
+
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
       { status: 200 }
