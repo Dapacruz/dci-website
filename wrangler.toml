@@ -1,7 +1,0 @@
-# Cloudflare Pages configuration using OpenNext
-name = "dci-website"
-compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat"]
-
-# OpenNext configuration
-pages_build_output_dir = ".open-next"

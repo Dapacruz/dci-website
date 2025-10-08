@@ -1,106 +1,85 @@
-# DC Infrastructures, Inc. - Website
+# DC Infrastructures, Inc. Website
 
-A modern, professional single-page website for DC Infrastructures, Inc., built with Next.js, TypeScript, Tailwind CSS, and Shadcn/ui components.
+Modern, responsive website for DC Infrastructures, Inc. Built with Vite, React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- **Modern Design**: Clean, professional UI with black background and cobalt blue accents
-- **Responsive Layout**: Fully responsive design that works on all devices
-- **Smooth Navigation**: Single-page design with smooth scrolling between sections
-- **Interactive Components**: Hover effects, animations, and interactive elements
-- **Contact Form**: Functional contact form with validation
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- ⚡️ Lightning-fast Vite development server
+- ⚛️ React 18 with TypeScript
+- 🎨 Tailwind CSS with custom design system
+- 📱 Fully responsive design
+- 🌙 Dark mode (black background with cobalt blue accents)
+- 📧 Contact form with Resend API integration
+- 🚀 Optimized for Cloudflare Pages deployment
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_RESEND_API_KEY=your_resend_api_key_here
+```
+
+## Cloudflare Pages Deployment
+
+### Automatic Git Deployment
+
+1. **Connect Repository**
+   - Go to Cloudflare Pages dashboard
+   - Click "Create a project" → "Connect to Git"
+   - Select this repository
+
+2. **Build Settings**
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+   - **Root directory**: `/` (leave as default)
+   - **Environment variables**:
+     - `VITE_RESEND_API_KEY`: Your Resend API key
+
+3. **Deploy**
+   - Every push to `main` triggers a production deployment
+   - Pull requests create preview deployments automatically
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Vite + React 18
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: Shadcn/ui
+- **UI Components**: Radix UI + shadcn/ui
 - **Icons**: Lucide React
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or higher
-- npm or yarn
-
-### Installation
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Set up environment variables:
-
-Set the `RESEND_API_KEY` environment variable with your API key from [resend.com/api-keys](https://resend.com/api-keys):
-
-```bash
-export RESEND_API_KEY=re_your_api_key_here
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+- **Email**: Resend API
+- **Hosting**: Cloudflare Pages
 
 ## Project Structure
 
 ```
-dci-website/
-├── app/
-│   ├── globals.css       # Global styles and Tailwind configuration
-│   ├── layout.tsx        # Root layout component
-│   └── page.tsx          # Main landing page
-├── components/
-│   └── ui/               # Shadcn/ui components
-│       ├── button.tsx
-│       ├── input.tsx
-│       ├── textarea.tsx
-│       └── label.tsx
-├── lib/
-│   └── utils.ts          # Utility functions
-├── next.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-└── package.json
-```
-
-## Sections
-
-1. **Hero Section**: Company introduction with call-to-action
-2. **Services Section**: Detailed overview of infrastructure services
-3. **Why Choose Us**: Key differentiators and benefits
-4. **Contact Section**: Contact form for inquiries
-
-## Customization
-
-### Colors
-
-The color scheme uses:
-- Primary background: Black (#000000)
-- Accent color: Cobalt blue (#0047AB)
-- Text: White and gray variants
-
-To modify colors, update the CSS variables in `app/globals.css`.
-
-### Content
-
-All content can be modified in `app/page.tsx`.
-
-## Build for Production
-
-```bash
-npm run build
-npm start
+├── src/
+│   ├── components/ui/    # Reusable UI components
+│   ├── lib/              # Utility functions
+│   ├── App.tsx           # Main application component
+│   ├── main.tsx          # Application entry point
+│   └── index.css         # Global styles
+├── public/               # Static assets
+├── index.html            # HTML entry point
+└── vite.config.ts        # Vite configuration
 ```
 
 ## License
 
-© 2024 DC Infrastructures, Inc. All rights reserved.
+© 2025 DC Infrastructures, Inc. All rights reserved.
