@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
-export const runtime = 'edge'
+// Remove edge runtime - use default Node.js runtime
+// export const runtime = 'edge'
 
 export async function POST(request: Request) {
   try {
