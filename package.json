@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && @opennextjs/cloudflare",
+    "preview": "wrangler pages dev .open-next/worker --compatibility-flag=nodejs_compat",
+    "deploy": "npm run build && wrangler pages deploy .open-next/worker",
     "start": "next start",
     "lint": "next lint"
   },
@@ -21,6 +23,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.9.2",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
