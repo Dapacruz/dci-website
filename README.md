@@ -34,13 +34,21 @@ A modern, professional single-page website for DC Infrastructures, Inc., built w
 npm install
 ```
 
-2. Run the development server:
+2. Set up environment variables:
+
+Set the `RESEND_API_KEY` environment variable with your API key from [resend.com/api-keys](https://resend.com/api-keys):
+
+```bash
+export RESEND_API_KEY=re_your_api_key_here
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 

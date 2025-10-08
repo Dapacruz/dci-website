@@ -32,12 +32,28 @@ export default function Home() {
     e.preventDefault()
     setFormStatus('submitting')
 
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success')
-      setFormData({ name: '', email: '', company: '', message: '' })
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setFormStatus('success')
+        setFormData({ name: '', email: '', company: '', message: '' })
+        setTimeout(() => setFormStatus('idle'), 3000)
+      } else {
+        setFormStatus('error')
+        setTimeout(() => setFormStatus('idle'), 3000)
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setFormStatus('error')
       setTimeout(() => setFormStatus('idle'), 3000)
-    }, 1000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -424,6 +440,12 @@ export default function Home() {
                 {formStatus === 'success' && (
                   <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center">
                     Message sent successfully! We&apos;ll get back to you soon.
+                  </div>
+                )}
+
+                {formStatus === 'error' && (
+                  <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
+                    Failed to send message. Please try again.
                   </div>
                 )}
               </form>
