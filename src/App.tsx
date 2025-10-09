@@ -69,9 +69,9 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <div className="text-xl font-bold">
@@ -165,7 +165,9 @@ export default function App() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="gradient-text">Empowering Organizations</span>
+              <span className="gradient-text">
+                Empowering<br />Organizations
+              </span>
               <br />
               <span className="text-white">Through Modern Infrastructure</span>
             </h1>
@@ -205,7 +207,7 @@ export default function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/10 hover:border-[#0047AB]/50"
+                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] transition-all border border-white/10 hover:border-[#0047AB]/50"
               >
                 <item.icon size={32} className="text-[#0047AB]" />
                 <span className="text-sm text-gray-300">{item.label}</span>
@@ -216,7 +218,7 @@ export default function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="section-padding bg-gradient-to-b from-black to-[#0047AB]/5">
+      <section id="services" className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -229,7 +231,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Infrastructure Automation */}
-            <div className="group p-8 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0047AB]/50 transition-all">
+            <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
                 <Workflow className="text-[#0047AB]" size={24} />
               </div>
@@ -241,7 +243,7 @@ export default function App() {
             </div>
 
             {/* Network Architecture */}
-            <div className="group p-8 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0047AB]/50 transition-all">
+            <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
                 <Network className="text-[#0047AB]" size={24} />
               </div>
@@ -253,7 +255,7 @@ export default function App() {
             </div>
 
             {/* Infrastructure as Code */}
-            <div className="group p-8 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0047AB]/50 transition-all">
+            <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
                 <Code2 className="text-[#0047AB]" size={24} />
               </div>
@@ -265,7 +267,7 @@ export default function App() {
             </div>
 
             {/* Monitoring & Visualization */}
-            <div className="group p-8 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0047AB]/50 transition-all">
+            <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
                 <BarChart3 className="text-[#0047AB]" size={24} />
               </div>
@@ -336,7 +338,7 @@ export default function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#0047AB]/50 transition-all"
+                className="p-6 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#0047AB]/50 transition-all"
               >
                 <CheckCircle2 className="text-[#0047AB] mb-4" size={28} />
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -348,7 +350,7 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding bg-gradient-to-b from-black to-[#0047AB]/5">
+      <section id="contact" className="section-padding">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -360,7 +362,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-12">
+            <div className="bg-white/[0.02] border border-white/10 rounded-xl p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -375,7 +377,7 @@ export default function App() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="bg-black/50 border-white/20 focus:border-[#0047AB]"
+                      className="bg-black/[0.35] border-white/20 focus:border-[#0047AB]"
                     />
                   </div>
 
@@ -391,7 +393,7 @@ export default function App() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@company.com"
-                      className="bg-black/50 border-white/20 focus:border-[#0047AB]"
+                      className="bg-black/[0.35] border-white/20 focus:border-[#0047AB]"
                     />
                   </div>
                 </div>
@@ -407,7 +409,7 @@ export default function App() {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your Company Name"
-                    className="bg-black/50 border-white/20 focus:border-[#0047AB]"
+                    className="bg-black/[0.35] border-white/20 focus:border-[#0047AB]"
                   />
                 </div>
 
@@ -422,7 +424,7 @@ export default function App() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your infrastructure needs..."
-                    className="bg-black/50 border-white/20 focus:border-[#0047AB] min-h-[150px]"
+                    className="bg-black/[0.35] border-white/20 focus:border-[#0047AB] min-h-[150px]"
                   />
                 </div>
 
