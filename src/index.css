@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 10%;
+    --background: 0 0% 9.8%;
     --foreground: 0 0% 98%;
     --card: 0 0% 6%;
     --card-foreground: 0 0% 98%;
@@ -55,11 +55,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0 0% 10%);
+  background: hsl(0 0% 9.8%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 10%);
+  background: hsl(0 0% 9.8%);
   border-radius: 5px;
   transition: background 0.3s ease;
 }
@@ -74,17 +74,17 @@
 
 /* Show scrollbar only while scrolling */
 html {
-  scrollbar-color: hsl(0 0% 10%) hsl(0 0% 10%);
+  scrollbar-color: hsl(0 0% 9.8%) hsl(0 0% 9.8%);
   scrollbar-width: thin;
 }
 
 html:hover {
-  scrollbar-color: rgba(255, 255, 255, 0.3) hsl(0 0% 10%);
+  scrollbar-color: rgba(255, 255, 255, 0.3) hsl(0 0% 9.8%);
 }
 
 html:active,
 html:focus-within {
-  scrollbar-color: rgba(255, 255, 255, 0.4) hsl(0 0% 10%);
+  scrollbar-color: rgba(255, 255, 255, 0.4) hsl(0 0% 9.8%);
 }
 
 /* Smooth animations */
