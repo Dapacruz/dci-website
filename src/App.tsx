@@ -188,7 +188,7 @@ export default function App() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('services')}
-                className="border-[#0047AB] text-[#0047AB] hover:bg-[#0047AB]/10 text-lg"
+                className="border-[#0056D6] text-[#0056D6] hover:bg-[#0056D6]/10 text-lg"
               >
                 Explore Services
               </Button>
@@ -209,7 +209,7 @@ export default function App() {
                 key={index}
                 className="flex flex-col items-center gap-3 p-6 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] transition-all border border-white/10 hover:border-[#0047AB]/50"
               >
-                <item.icon size={32} className="text-[#0047AB]" />
+                <item.icon size={32} className="text-[#0056D6]" />
                 <span className="text-sm text-gray-300">{item.label}</span>
               </div>
             ))}
@@ -233,7 +233,7 @@ export default function App() {
             {/* Infrastructure Automation */}
             <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
-                <Workflow className="text-[#0047AB]" size={24} />
+                <Workflow className="text-[#0056D6]" size={24} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Infrastructure Automation</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -245,7 +245,7 @@ export default function App() {
             {/* Network Architecture */}
             <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
-                <Network className="text-[#0047AB]" size={24} />
+                <Network className="text-[#0056D6]" size={24} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Network Architecture</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -257,7 +257,7 @@ export default function App() {
             {/* Infrastructure as Code */}
             <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
-                <Code2 className="text-[#0047AB]" size={24} />
+                <Code2 className="text-[#0056D6]" size={24} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Infrastructure as Code</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -269,7 +269,7 @@ export default function App() {
             {/* Monitoring & Visualization */}
             <div className="group p-8 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#0047AB]/50 transition-all">
               <div className="w-12 h-12 rounded-lg bg-[#0047AB]/20 flex items-center justify-center mb-4 group-hover:bg-[#0047AB]/30 transition-colors">
-                <BarChart3 className="text-[#0047AB]" size={24} />
+                <BarChart3 className="text-[#0056D6]" size={24} />
               </div>
               <h3 className="text-2xl font-semibold mb-3">Monitoring & Visualization</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -281,7 +281,7 @@ export default function App() {
 
           {/* Additional Description */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <div className="p-8 rounded-xl bg-gradient-to-r from-[#0047AB]/10 to-transparent border border-[#0047AB]/20">
+            <div className="p-8 rounded-xl bg-gradient-to-r from-[#0047AB]/30 to-[#0047AB]/10 border border-[#0047AB]/40">
               <h3 className="text-2xl font-semibold mb-4">End-to-End Solutions</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 We don't just implement technology—we develop custom tools tailored to your specific challenges
@@ -340,7 +340,7 @@ export default function App() {
                 key={index}
                 className="p-6 rounded-xl bg-white/[0.02] border border-white/10 hover:border-[#0047AB]/50 transition-all"
               >
-                <CheckCircle2 className="text-[#0047AB] mb-4" size={28} />
+                <CheckCircle2 className="text-[#0056D6] mb-4" size={28} />
                 <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.description}</p>
               </div>
