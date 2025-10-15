@@ -8,11 +8,8 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
+/dist
 /build
 
 # misc
@@ -26,14 +23,18 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
-# vercel
-.vercel
+.env
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # mcps
 .serena
 .playwright-mcp
+
+# backup
+.backup
+
+# claude
+.claude/settings.local.json
+

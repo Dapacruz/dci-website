@@ -66,15 +66,62 @@ The contact form uses Cloudflare Pages Functions (serverless). The API key is se
 
 ```
 ├── src/
-│   ├── components/ui/    # Reusable UI components
-│   ├── lib/              # Utility functions
-│   ├── App.tsx           # Main application component
+│   ├── components/
+│   │   └── ui/           # shadcn/ui components (button, input, textarea, label)
+│   ├── lib/
+│   │   └── utils.ts      # Utility functions (cn helper)
+│   ├── App.tsx           # Main application component (single-page app)
 │   ├── main.tsx          # Application entry point
-│   └── index.css         # Global styles
-├── public/               # Static assets
+│   └── index.css         # Global styles & CSS variables
+├── functions/
+│   └── api/
+│       └── contact.ts    # Cloudflare Pages Function for contact form
+├── .claude/              # Claude Code integration
+│   ├── commands/         # Custom slash commands for workflows
+│   └── agents/           # Specialized agent configurations
 ├── index.html            # HTML entry point
-└── vite.config.ts        # Vite configuration
+├── vite.config.ts        # Vite configuration (path aliases)
+├── tailwind.config.ts    # Tailwind configuration
+├── tsconfig.json         # TypeScript configuration
+├── postcss.config.js     # PostCSS configuration
+├── CLAUDE.md             # Claude Code instructions
+├── CONTRIBUTING.md       # Git workflow and contribution guidelines
+└── TROUBLESHOOTING.md    # Common issues and solutions
 ```
+
+## Claude Code Integration
+
+This project includes powerful AI-assisted development workflows via [Claude Code](https://claude.ai/code). The `.claude/` directory contains custom commands and specialized agents.
+
+### Custom Commands
+
+Use these slash commands in Claude Code:
+
+- **`/prime`** - Prime Claude with project context and recent changes
+- **`/generate-prp`** - Generate Project Requirement Plans for complex features
+- **`/execute-prp`** - Execute PRPs with automated validation
+- **`/prep-parallel-execution`** - Setup parallel git worktrees for concurrent development
+- **`/fix-github-issue`** - Automated GitHub issue resolution workflow
+
+### Specialized Agents
+
+- **`@documentation-manager`** - Automatically keeps documentation in sync with code changes
+- **`@validation-gates`** - Ensures quality through comprehensive testing and validation
+
+### Example Workflow
+
+```bash
+# Start a new feature
+/generate-prp "Add blog section to website"
+
+# Execute with validation
+/execute-prp
+
+# Documentation automatically updated by @documentation-manager
+# Tests automatically run by @validation-gates
+```
+
+See `.claude/README.md` for detailed documentation on all commands and agents.
 
 ## License
 
