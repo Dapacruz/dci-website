@@ -172,8 +172,8 @@ export default function App() {
               <span className="text-white">Through Modern Infrastructure</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-              Transform your technology infrastructure into a strategic asset with comprehensive assessment,
-              thoughtful design, and expert implementation.
+              Modernize your operations through infrastructure as code and intelligent automation—enabling
+              scalability, reliability, and accelerated delivery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
