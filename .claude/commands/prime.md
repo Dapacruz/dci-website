@@ -1,6 +1,6 @@
 # Prime Context for Claude Code
 
-Use the command `tree` to get an understanding of the project structure.
+Use the command `tre` to get an understanding of the project structure.
 
 Start with reading the CLAUDE.md file if it exists to get an understanding of the project.
 
