@@ -81,7 +81,7 @@ export default function App() {
             />
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8">
               <button
                 onClick={() => scrollToSection('home')}
                 className="text-gray-300 hover:text-white transition-colors"
@@ -116,7 +116,7 @@ export default function App() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="lg:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -125,7 +125,7 @@ export default function App() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 space-y-4 border-t border-white/10">
+            <div className="lg:hidden py-4 space-y-4 border-t border-white/10">
               <button
                 onClick={() => scrollToSection('home')}
                 className="block text-gray-300 hover:text-white transition-colors"
@@ -162,7 +162,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="section-padding pt-32 md:pt-40">
+      <section id="home" className="pt-48 pb-20 md:pb-32">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
